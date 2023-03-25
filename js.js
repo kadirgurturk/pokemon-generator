@@ -35,7 +35,7 @@ btn.addEventListener("click", getPokeData);
 window.addEventListener("load",getPokeData);
 
 function generatePokemon(data){
-    console.log(data);
+    
     const name = document.querySelector(".name");
     name.innerText = data.name[0].toUpperCase() + data.name.slice(1);
     
@@ -54,12 +54,12 @@ function generatePokemon(data){
     const types = document.querySelector(".types");
     types.textContent = ""
     const typesList = typeNames(data);
-    console.log(typesList);
+    
     appendTypes(typesList);
     
     const imgSrc = data.sprites.other.dream_world.front_default;
     const img = document.querySelector("img");
-    console.log(imgSrc);
+    
 
     img.src = imgSrc;
 
@@ -87,8 +87,9 @@ function appendTypes(typesList){
 
 function radialColor(type){
    
+    let color = typeColor[type]
     
-    card.style.background = `radial-gradient(circle at 50% 0%, ${type} 36%, #ffffff 36%)`;
+    card.style.background = `radial-gradient(circle at 50% 0%, ${color} 36%, #ffffff 36%)`;
     
    
 }
